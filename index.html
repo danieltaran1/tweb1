@@ -7,52 +7,74 @@
     <link href="./src/output.css" rel="stylesheet">
 </head>
 <body class=" px-30">
-    <div class="p-4 flex flex-row gap-10 justify-between text-xl ">
-        <a href="./index.html" class="justify-left font-bold text-4xl" >CS2-foryou</a>
-        <div class="justify-right flex flex-row gap-20 px-10 items-center">
-            <div class="font-bold text-red-800">OPEN NOW</div>
-            <a href="./cases.html" class="hover:text-gray-700">Cases</a>
-            <a href="./contacts.html" class="hover:text-gray-700">Contacts</a>
-            <a href="./about.html" class="hover:text-gray-700">About</a>
-            
-        </div>
-    </div>
-    </div>
 
-    <div class="relative overflow-hidden border-b-2 rounded-4xl">
-        <div class="absolute inset-0 bg-[url(/img/bg.png)] bg-cover bg-center bg-fixed blur-xs scale-105"></div>
-        <div class="absolute inset-0 bg-black/40"></div>
-        <div class="relative flex py-45 flex-col items-center gap-5">
-            <div class="text-9xl text-white font-bold">CS2-foryou</div>
-            <div class="text-3xl text-white font-semibold">CS2 case simulator</div>
-            <div class="text-xl rounded-full p-4 bg-sky-600 hover:bg-sky-500 transition text-white cursor-pointer">
-                OPEN NOW FOR FREE
+    <header>
+        <nav>
+            <div class="p-4 flex flex-row gap-10 justify-between text-xl ">
+                <a href="./index.html" class="justify-left font-bold text-4xl flex" >
+                    <div class="text-orange-500">CS2-</div>
+                    <div class="text-blue-800">foryou</div></a>
+                    <div class="justify-right flex flex-row gap-20 px-10 items-center">
+                    <a href="opencase.html"><div class="font-bold text-red-800">OPEN NOW</div></a>
+                    <a href="./contacts.html" class="hover:text-gray-700">Contacts</a>
+                    <a href="./about.html" class="hover:text-gray-700">About</a>
+                    <a href="./cases.html">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <circle cx="12" cy="9" r="3" fill="currentColor"/>
+                        <path d="M7 18C7 15.5 9 14 12 14C15 14 17 15.5 17 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>      
+                </div>
+            </div> 
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <div class="relative overflow-hidden border-b-2 rounded-4xl">
+                <div class="absolute inset-0 bg-[url(/img/bg.png)] bg-cover bg-center  blur-xs scale-105"></div>
+                <div class="absolute inset-0 bg-black/40"></div>
+                <div class="relative flex py-45 flex-col items-center gap-5">
+                    <div class="text-9xl text-white font-bold">CS2-foryou</div>
+                    <div class="text-3xl text-white font-semibold">CS2 case simulator</div>
+                    <div class="text-xl rounded-full p-4 bg-sky-600 hover:bg-sky-500 transition text-white cursor-pointer">
+                        OPEN NOW FOR FREE
+                    </div>
+                </div>
             </div>
-        </div>
-
-    </div>
-
-
-    <div class="h-70">
-        <div>
-            <div class="px-4 py-7 text-4xl flex font-bold">Available cases:</div>
-        </div>
-        <div class="flex flex-row gap-30 p-15 justify-center bg-gray-200 rounded-4xl items-center">
-            <div><img src="img/Chroma2.png" alt="" class="">
-                <div class="flex justify-center font-bold">Chroma 2</div>
+        </section>
+        
+        <section>
+            <div class="h-70">
+                <div>
+                    <div class="px-4 py-7 text-4xl flex font-bold">Available cases:</div>
+                </div>
+                <div class="flex flex-row gap-30 p-15 justify-center bg-gray-200 rounded-4xl items-center">
+                    <div><img src="img/Chroma2.png" alt="" class="">
+                        <div class="flex justify-center font-bold">Chroma 2</div>
+                    </div>
+                    <div><img src="img/Dangerzone.png" alt="" class="">
+                    <div class="flex justify-center font-bold">Dangerzone</div></div>
+                    <div><img src="img/Dreams.png" alt="" class="">
+                    <div class="flex justify-center font-bold">Dreams & Nightmares</div>
+                    </div>
+                    <div><img src="img/Fracture.png" alt="" class="">
+                    <div class="flex justify-center font-bold">Fracture</div></div>
+                    <div><img src="img/Hydra.png" alt="" class="">
+                    <div class="flex justify-center font-bold">Hydra</div></div>
+                </div>
             </div>
-            <div><img src="img/Dangerzone.png" alt="" class="">
-            <div class="flex justify-center font-bold">Dangerzone</div></div>
-            <div><img src="img/Dreams.png" alt="" class="">
-            <div class="flex justify-center font-bold">Dreams & Nightmares</div>
-            </div>
-            <div><img src="img/Fracture.png" alt="" class="">
-            <div class="flex justify-center font-bold">Fracture</div></div>
-            <div><img src="img/Hydra.png" alt="" class="">
-            <div class="flex justify-center font-bold">Hydra</div></div>
-        </div>
-    </div>
+        </section>
+    </main>
 
-    random tezt asdfadasdfa
+    <footer>
+        <section class="my-100"">
+            <div class="h-100 bg-gray-200 p-10">
+                
+            </div>
+        </section>
+    </footer>
+
 </body>
 </html>
