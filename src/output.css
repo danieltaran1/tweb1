@@ -27,7 +27,6 @@
     --color-blue-200: oklch(88.2% 0.059 254.128);
     --color-blue-400: oklch(70.7% 0.165 254.624);
     --color-blue-500: oklch(62.3% 0.214 259.815);
-    --color-blue-700: oklch(48.8% 0.243 264.376);
     --color-blue-800: oklch(42.4% 0.199 265.638);
     --color-indigo-500: oklch(58.5% 0.233 277.117);
     --color-slate-50: oklch(98.4% 0.003 247.858);
@@ -70,12 +69,14 @@
     --font-weight-extrabold: 800;
     --tracking-tight: -0.025em;
     --radius-md: 0.375rem;
+<<<<<<< HEAD
     --radius-lg: 0.5rem;
+=======
+>>>>>>> lab1
     --radius-3xl: 1.5rem;
     --radius-4xl: 2rem;
     --drop-shadow-md: 0 3px 3px rgb(0 0 0 / 0.12);
     --blur-xs: 4px;
-    --blur-sm: 8px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -309,14 +310,8 @@
   .h-70 {
     height: calc(var(--spacing) * 70);
   }
-  .h-80 {
-    height: calc(var(--spacing) * 80);
-  }
   .h-100 {
     height: calc(var(--spacing) * 100);
-  }
-  .h-120 {
-    height: calc(var(--spacing) * 120);
   }
   .h-130 {
     height: calc(var(--spacing) * 130);
@@ -327,8 +322,13 @@
   .h-200 {
     height: calc(var(--spacing) * 200);
   }
+<<<<<<< HEAD
   .h-500 {
     height: calc(var(--spacing) * 500);
+=======
+  .h-1000 {
+    height: calc(var(--spacing) * 1000);
+>>>>>>> lab1
   }
   .h-1000 {
     height: calc(var(--spacing) * 1000);
@@ -381,9 +381,6 @@
   .flex-row {
     flex-direction: row;
   }
-  .content-center {
-    align-content: center;
-  }
   .items-center {
     align-items: center;
   }
@@ -420,9 +417,6 @@
   .gap-30 {
     gap: calc(var(--spacing) * 30);
   }
-  .gap-50 {
-    gap: calc(var(--spacing) * 50);
-  }
   .overflow-hidden {
     overflow: hidden;
   }
@@ -438,8 +432,8 @@
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
-  .rounded-lg {
-    border-radius: var(--radius-lg);
+  .rounded-md {
+    border-radius: var(--radius-md);
   }
   .rounded-md {
     border-radius: var(--radius-md);
@@ -508,9 +502,12 @@
   }
   .bg-blue-500 {
     background-color: var(--color-blue-500);
+<<<<<<< HEAD
   }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
+=======
+>>>>>>> lab1
   }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
@@ -615,9 +612,6 @@
   .object-cover {
     object-fit: cover;
   }
-  .p-1 {
-    padding: calc(var(--spacing) * 1);
-  }
   .p-3 {
     padding: calc(var(--spacing) * 3);
   }
@@ -636,8 +630,8 @@
   .p-20 {
     padding: calc(var(--spacing) * 20);
   }
-  .p-40 {
-    padding: calc(var(--spacing) * 40);
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
   }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
@@ -660,17 +654,14 @@
   .px-10 {
     padding-inline: calc(var(--spacing) * 10);
   }
-  .px-15 {
-    padding-inline: calc(var(--spacing) * 15);
-  }
-  .px-20 {
-    padding-inline: calc(var(--spacing) * 20);
-  }
   .px-30 {
     padding-inline: calc(var(--spacing) * 30);
   }
-  .px-105 {
-    padding-inline: calc(var(--spacing) * 105);
+  .py-1 {
+    padding-block: calc(var(--spacing) * 1);
+  }
+  .py-1\.5 {
+    padding-block: calc(var(--spacing) * 1.5);
   }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
@@ -696,8 +687,9 @@
   .py-45 {
     padding-block: calc(var(--spacing) * 45);
   }
-  .text-center {
-    text-align: center;
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -746,15 +738,18 @@
   .tracking-tight {
     --tw-tracking: var(--tracking-tight);
     letter-spacing: var(--tracking-tight);
+<<<<<<< HEAD
   }
   .text-black {
     color: var(--color-black);
   }
   .text-blue-500 {
     color: var(--color-blue-500);
+=======
+>>>>>>> lab1
   }
-  .text-blue-700 {
-    color: var(--color-blue-700);
+  .text-black {
+    color: var(--color-black);
   }
   .text-blue-800 {
     color: var(--color-blue-800);
@@ -767,9 +762,6 @@
   }
   .text-orange-500 {
     color: var(--color-orange-500);
-  }
-  .text-orange-600 {
-    color: var(--color-orange-600);
   }
   .text-red-800 {
     color: var(--color-red-800);
