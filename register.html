@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open cases</title>
+    <title>Account</title>
     <link href="./src/output.css" rel="stylesheet">
-    
 </head>
 <body class="px-30">
     <header>
@@ -29,53 +28,94 @@
                         <path d="M7 18C7 15.5 9 14 12 14C15 14 17 15.5 17 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </a>
-                    
-                    
                 </div>
             </div> 
+            
         </nav>
-         
     </header>
 
 
     <main>
-        <div class="h-70 bg-gray-200 rounded-4xl">
+        <div class="flex justify-center p-10">
+            <div class="relative flex items-center justify-center w-full max-w-sm min-h-[520px] bg-sky-100 rounded-[2.5rem] shadow-sm border border-sky-200 p-6 overflow-hidden">
+                
+                <div class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]"></div>
+
+                <div class="relative w-full max-w-[300px] bg-white rounded-3xl shadow-xl p-6 sm:p-8 flex flex-col z-15">
+                    
+                    <div class="font-bold text-2xl text-[#1e3a8a] flex justify-center pb-6">
+                        Register
+                    </div>
+
+                    <form class="flex flex-col space-y-4 w-full">
+                        
+                        <div class="flex flex-col">
+                            <label for="nickname" class="text-sm font-semibold text-slate-600 mb-1 ml-1">Email</label>
+                            <input id="email" type="email" name="email" placeholder="Enter Email" required class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 focus:border-[#1e3a8a] focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] transition-colors shadow-sm" />
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="nickname" class="text-sm font-semibold text-slate-600 mb-1 ml-1">Nickname</label>
+                            <input id="nickname" type="text" name="nickname" placeholder="Enter Nickname" required class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 focus:border-[#1e3a8a] focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] transition-colors shadow-sm" />
+                        </div>
+
+                        <div class="flex flex-col">
+                            <label for="password" class="text-sm font-semibold text-slate-600 mb-1 ml-1">Password</label>
+                            <input id="password" type="password" name="password" placeholder="Enter Password" required class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 focus:border-[#1e3a8a] focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] transition-colors shadow-sm" />
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center pt-2 pb-4 space-y-1">
+                            <div class="text-xs text-slate-500">Already have an account?</div>
+                            <a href="login.html" class="text-sm font-semibold text-[#1e3a8a] hover:text-blue-900 hover:underline">Login</a>
+                        </div>
+                            
+                        <div class="flex justify-center w-full mt-2">
+                            <button type="submit" class="w-full bg-[#1e3a8a] hover:bg-blue-900 py-2.5 rounded-lg text-white font-bold cursor-pointer transition-colors text-sm shadow-md">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
 
-        <div class="p-10 flex flex-row justify-center">
-            <div class="bg-blue-400 p-4 font-bold rounded-full text-white text-3xl cursor-pointer">Open now</div>
-        </div>
-        <div class="h-70">
-            <div class="flex flex-row gap-3 justify-center rounded-4xl items-center p-5 items-stretch">
-                    <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                        <img src="img/Chroma2.png" alt="" class="">
-                        <div class="flex justify-center font-bold">Chroma 2</div>
-                    </div>
-                    <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400"> 
-                        <img src="img/Dangerzone.png" alt="" class="">
-                        <div class="flex justify-center font-bold">Dangerzone</div>
-                    </div>
-                    <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                        <img src="img/dreams2.png" alt="" class="w-full max-w-full object-contain"">
-                        <div class="flex justify-center font-bold">Dreams & Nightmares</div>
-                    </div>
-                    <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                        <img src="img/Fracture.png" alt="" class="">
-                        <div class="flex justify-center font-bold">Fracture</div>
-                    </div>
-                    <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                        <img src="img/Hydra.png" alt="" class="">
-                        <div class="flex justify-center font-bold">Hydra</div>
-                    </div>
+        <div class="py-10 hidden">
+            <div class="flex flex-row justify-between">
+                <div class="font-bold p-4 text-4xl">My Skins:</div>
+                <div class="flex flex-row gap-4 items-center px-10">
+                    <div>Knifes</div>
+                    <div>Gloves</div>
+                    <div>Pistols</div>
+                    <div>Rifles</div>
+                    <div>SMGs</div>
+                    <div>Heavy</div> 
                 </div>
+            </div>
+            <div class=" font-bold p-4 text-4xl  rounded-4xl ">
+                <div class="grid grid-cols-6 gap-10 flex justify-center items-center p-4">
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
+                </div>
+            </div>
         </div>
     </main>
 
-
-
-    <div class="py-7">
-
-    </div>
     <footer>
         <section>
             <div class="">
