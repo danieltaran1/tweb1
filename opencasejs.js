@@ -9,16 +9,16 @@ const RARITY = {
 
 const SKINS = {
     chroma2: [
-        { name:'Nova | Candy Apple',        wear:'Field-Tested',    rarity:'milspec',    img:'img/Chroma2.png'    },
-        { name:'Glock-18 | Grinder',        wear:'Well-Worn',       rarity:'milspec',    img:'img/Chroma2.png'    },
-        { name:'P250 | Valence',            wear:'Minimal Wear',    rarity:'milspec',    img:'img/Chroma2.png'    },
-        { name:'MAC-10 | Neon Rider',       wear:'Minimal Wear',    rarity:'restricted', img:'img/Chroma2.png'    },
-        { name:'AK-47 | Cartel',            wear:'Factory New',     rarity:'restricted', img:'img/Chroma2.png'    },
-        { name:'MP7 | Nemesis',             wear:'Minimal Wear',    rarity:'classified', img:'img/Chroma2.png'    },
-        { name:'FAMAS | Neural Net',        wear:'Field-Tested',    rarity:'classified', img:'img/Chroma2.png'    },
-        { name:'M4A1-S | Masterpiece',      wear:'Factory New',     rarity:'covert',     img:'img/Chroma2.png'    },
-        { name:'AK-47 | Vulcan',            wear:'Factory New',     rarity:'covert',     img:'img/Chroma2.png'    },
-        { name:'Gut Knife | Doppler',       wear:'Factory New',     rarity:'gold',       img:'img/Chroma2.png'    },
+        { name:'Nova | Candy Apple',        wear:'Field-Tested',    rarity:'milspec',    img:'img/chroma2/candy.jpg'    },
+        { name:'Glock-18 | Grinder',        wear:'Well-Worn',       rarity:'milspec',    img:'img/chroma2/grinder.jpg'    },
+        { name:'P250 | Valence',            wear:'Minimal Wear',    rarity:'milspec',    img:'img/chroma2/p250.jpg'},
+        { name:'MAC-10 | Neon Rider',       wear:'Minimal Wear',    rarity:'restricted', img:'img/chroma2/mac10.jpg'    },
+        { name:'AK-47 | Cartel',            wear:'Factory New',     rarity:'restricted', img:'img/chroma2/akblack.jpg'    },
+        { name:'MP7 | Nemesis',             wear:'Minimal Wear',    rarity:'classified', img:'img/chroma2/nemesis.jpg'    },
+        { name:'FAMAS | Neural Net',        wear:'Field-Tested',    rarity:'classified', img:'img/chroma2/famas.jpg'    },
+        { name:'M4A1-S | Masterpiece',      wear:'Factory New',     rarity:'covert',     img:'img/chroma2/m4a1.jpg'    },
+        { name:'AK-47 | Vulcan',            wear:'Factory New',     rarity:'covert',     img:'img/chroma2/vulcano.jpg'    },
+        { name:'Gut Knife | Doppler',       wear:'Factory New',     rarity:'gold',       img:'img/chroma2/gut.jpg'    },
     ],
     dangerzone: [
         { name:'R8 Revolver | Grip',        wear:'Factory New',     rarity:'milspec',    img:'img/Dangerzone.png' },
