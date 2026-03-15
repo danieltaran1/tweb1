@@ -1,0 +1,13 @@
+@keyframes scrollCases {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+#cases-track {
+    animation: scrollCases 10s linear infinite;
+    width: max-content;
+}
+
+#cases-track:hover {
+    animation-play-state: paused;
+}

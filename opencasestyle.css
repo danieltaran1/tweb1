@@ -1,0 +1,35 @@
+.reel-track {
+            display: flex;
+            flex-direction: row;
+            will-change: transform;
+        }
+        .reel-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+        .reel-wrapper::before {
+            content: '';
+            position: absolute;
+            left: 50%; top: 0; bottom: 0;
+            width: 2px;
+            background: #3b82f6;
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 8px #3b82f6;
+        }
+        .reel-wrapper::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(90deg, white 0%, transparent 15%, transparent 85%, white 100%);
+            z-index: 9;
+            pointer-events: none;
+        }
+        @keyframes popIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to   { transform: scale(1);   opacity: 1; }
+        }
+        .pop-in { animation: popIn .35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+        .confetti-canvas {
+            position: fixed; inset: 0; pointer-events: none; z-index: 200;
+        }
