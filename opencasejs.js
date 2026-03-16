@@ -71,7 +71,7 @@ const SKINS = {
 };
 
 
-const WEIGHTS = { milspec:60, restricted:22, classified:11, covert:5, gold:2 };
+const WEIGHTS = { milspec:70, restricted:20, classified:10, covert:9, gold:4 };
 
 function rollRarity() {
     const total = Object.values(WEIGHTS).reduce((a, b) => a + b, 0);
@@ -262,42 +262,6 @@ function showPopup(skin) {
 function closePopup(openAgain) {
     document.getElementById('popup-overlay').classList.add('hidden');
     if (openAgain) setTimeout(() => startOpen(), 200);
-}
-
-function spawnConfetti(accentColor) {
-    const canvas  = document.createElement('canvas');
-    canvas.className = 'confetti-canvas';
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-    document.body.appendChild(canvas);
-    const ctx = canvas.getContext('2d');
-
-    const pieces = Array.from({ length: 90 }, () => ({
-        x:     Math.random() * canvas.width,
-        y:    -20 - Math.random() * 100,
-        r:     2 + Math.random() * 5,
-        dx:    (Math.random() - 0.5) * 4,
-        dy:    2 + Math.random() * 4,
-        alpha: 1,
-        color: [accentColor, '#3b82f6', '#f59e0b', '#e2e8f0'][Math.floor(Math.random() * 4)],
-    }));
-
-    let frame = 0;
-    (function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        pieces.forEach(p => {
-            ctx.globalAlpha = Math.max(0, p.alpha);
-            ctx.fillStyle   = p.color;
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-            ctx.fill();
-            p.x     += p.dx;
-            p.y     += p.dy;
-            p.alpha -= 0.013;
-        });
-        if (++frame < 130) requestAnimationFrame(draw);
-        else canvas.remove();
-    })();
 }
 
 function resetReel() {
