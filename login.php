@@ -1,3 +1,51 @@
+<?php
+session_start(); // Pornim sesiunea pentru a ține utilizatorul logat
+
+$host = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "cs2"; // Baza ta de date
+
+$conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user_nickname = $_POST['nickname'];
+    $user_password = $_POST['password'];
+
+    // Căutăm utilizatorul în baza de date după nickname
+    $sql = "SELECT * FROM users WHERE nickname = '$user_nickname'";
+    $result = $conn->query($sql);
+
+    // Dacă găsim exact un utilizator cu acest nume
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        
+        // Verificăm dacă parola introdusă se potrivește cu cea criptată din baza de date
+        if (password_verify($user_password, $row['password'])) {
+            
+            // Succes! Salvăm datele utilizatorului în sesiune
+            $_SESSION['logged_in'] = true;
+            $_SESSION['nickname'] = $row['nickname'];
+            $_SESSION['balance'] = $row['balance'];
+            
+            // Îl redirecționăm pe pagina principală a simulatorului
+            header("Location: index.php");
+            exit();
+            
+        } else {
+            echo "<script>alert('Parola este incorectă!');</script>";
+        }
+    } else {
+        echo "<script>alert('Acest nickname nu există! Te rugăm să te înregistrezi.');</script>";
+    }
+}
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,32 +55,8 @@
     <link href="./src/output.css" rel="stylesheet">
 </head>
 <body class="px-30">
-    <header>
-        <nav>
-            <div class="p-4 flex flex-row gap-10 justify-between text-xl ">
-                <a href="./index.php" class="justify-left font-extrabold text-4xl flex" >
-                    <div class="flex justify-center items-center px-2 ">
-                        <img class="w-10 rounded-md" src="img/cslogo.png" alt="">
-                    </div>
-                    <div class="text-slate-800">CS2-foryou</div>
-                </a>
-                    <div class="justify-right flex flex-row gap-20 px-10 items-center">
-                    <a href="opencase.html"><div class="font-bold bg-black text-white px-5 py-1 rounded-full hover:bg-gray-700 hidden">OPEN NOW</div></a>
-                    <a href="./contacts.html" class="hover:text-gray-700 font-semibold hover:underline">Contacts</a>
-                    <a href="./about.html" class="hover:text-gray-700 font-semibold hover:underline">About</a>
-                    <a href="./faq.html" class="hover:text-gray-700 font-semibold hover:underline">FAQ</a>
-                    <a href="./login.php">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="hover:cursor-pointer hover:scale-110">
-                        <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                        <circle cx="12" cy="9" r="3" fill="currentColor"/>
-                        <path d="M7 18C7 15.5 9 14 12 14C15 14 17 15.5 17 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </a>
-                </div>
-            </div> 
-            
-        </nav>
-    </header>
+    
+    <?php include 'header.php'; ?>
 
 
     <main>
@@ -47,7 +71,7 @@
                         Login
                     </div>
 
-                    <form class="flex flex-col space-y-4 w-full">
+                    <form action="login.php" method="POST" class="flex flex-col space-y-4 w-full">
                         
                         <div class="flex flex-col">
                             <label for="nickname" class="text-sm font-semibold text-slate-600 mb-1 ml-1">Nickname</label>
@@ -67,7 +91,7 @@
 
                         <div class="flex flex-col justify-center items-center pt-2 pb-4 space-y-1">
                             <div class="text-xs text-slate-500">Don't have an account?</div>
-                            <a href="register.html" class="text-sm font-semibold text-[#1e3a8a] hover:text-blue-900 hover:underline">Register</a>
+                            <a href="register.php" class="text-sm font-semibold text-[#1e3a8a] hover:text-blue-900 hover:underline">Register</a>
                         </div>
                             
                         <div class="flex justify-center w-full mt-2">

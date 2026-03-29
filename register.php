@@ -1,3 +1,59 @@
+<?php
+ session_start();
+
+$host = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "cs2";
+
+$conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user_email = $_POST['email'];
+    $user_nickname = $_POST['nickname'];
+    $user_password = $_POST['password'];
+
+    // 1. PASUL NOU: Verificăm dacă email-ul sau nickname-ul există deja
+    $check_sql = "SELECT * FROM users WHERE email = '$user_email' OR nickname = '$user_nickname'";
+    $check_result = $conn->query($check_sql);
+
+    // Dacă num_rows este mai mare ca 0, înseamnă că a găsit o potrivire
+    if ($check_result->num_rows > 0) {
+        
+        // Preluăm rândul găsit pentru a vedea exact ce anume s-a potrivit
+        $row = $check_result->fetch_assoc();
+        
+        if ($row['email'] === $user_email) {
+            echo "<script>alert('Eroare: Acest email este deja înregistrat!');</script>";
+        } else if ($row['nickname'] === $user_nickname) {
+            echo "<script>alert('Eroare: Acest nickname este deja luat! Alege altul.');</script>";
+        }
+
+    } else {
+        // 2. Dacă nu a găsit niciun duplicat, putem continua cu înregistrarea
+        
+        // Criptăm parola
+        $hashed_password = password_hash($user_password, PASSWORD_DEFAULT);
+
+        // Salvăm în baza de date
+        $sql = "INSERT INTO users (email, nickname, password) VALUES ('$user_email', '$user_nickname', '$hashed_password')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "<script>
+                    alert('Account registered successfully! Redirecting to login...');
+                    window.location.href = 'login.php';
+                  </script>";
+        } else {
+            echo "<script>alert('Error: " . $conn->error . "');</script>";
+        }
+    }
+}
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,32 +63,8 @@
     <link href="./src/output.css" rel="stylesheet">
 </head>
 <body class="px-30">
-    <header>
-        <nav>
-            <div class="p-4 flex flex-row gap-10 justify-between text-xl ">
-                <a href="./index.php" class="justify-left font-extrabold text-4xl flex" >
-                    <div class="flex justify-center items-center px-2 ">
-                        <img class="w-10 rounded-md" src="img/cslogo.png" alt="">
-                    </div>
-                    <div class="text-slate-800">CS2-foryou</div>
-                </a>
-                    <div class="justify-right flex flex-row gap-20 px-10 items-center">
-                    <a href="opencase.html"><div class="font-bold bg-black text-white px-5 py-1 rounded-full hover:bg-gray-700 hidden">OPEN NOW</div></a>
-                    <a href="./contacts.html" class="hover:text-gray-700 font-semibold hover:underline">Contacts</a>
-                    <a href="./about.html" class="hover:text-gray-700 font-semibold hover:underline">About</a>
-                    <a href="./faq.html" class="hover:text-gray-700 font-semibold hover:underline">FAQ</a>
-                    <a href="./login.php">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="hover:cursor-pointer hover:scale-110">
-                        <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                        <circle cx="12" cy="9" r="3" fill="currentColor"/>
-                        <path d="M7 18C7 15.5 9 14 12 14C15 14 17 15.5 17 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </a>
-                </div>
-            </div> 
-            
-        </nav>
-    </header>
+    
+    <?php include 'header.php'; ?>
 
 
     <main>
@@ -47,7 +79,7 @@
                         Register
                     </div>
 
-                    <form class="flex flex-col space-y-4 w-full">
+                    <form action="register.php" method="POST" class="flex flex-col space-y-4 w-full">
                         
                         <div class="flex flex-col">
                             <label for="nickname" class="text-sm font-semibold text-slate-600 mb-1 ml-1">Email</label>

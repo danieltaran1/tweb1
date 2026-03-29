@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,33 +8,8 @@
     <link href="./src/output.css" rel="stylesheet">
 </head>
 <body class="px-30">
-     <header>
-        <nav>
-            <div class="p-4 flex flex-row gap-10 justify-between text-xl ">
-                <a href="./index.php" class="justify-left font-extrabold text-4xl flex" >
-                    <div class="flex justify-center items-center px-2 ">
-                        <img class="w-10 rounded-md" src="img/cslogo.png" alt="">
-                    </div>
-                    <div class="text-slate-800">CS2-foryou</div>
-                </a>
-                    <div class="justify-right flex flex-row gap-20 px-10 items-center">
-                    <a href="opencase.html"><div class="font-bold bg-black text-white px-5 py-1 rounded-full hover:bg-gray-700 hidden">OPEN NOW</div></a>
-                    <a href="./contacts.html" class="hover:text-gray-700 font-semibold hover:underline">Contacts</a>
-                    <a href="./about.html" class="hover:text-gray-700 font-semibold hover:underline">About</a>
-                    <a href="./faq.html" class="hover:text-gray-700 font-semibold hover:underline">FAQ</a>
-                    <a href="./login.php">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="hover:cursor-pointer hover:scale-110">
-                        <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                        <circle cx="12" cy="9" r="3" fill="currentColor"/>
-                        <path d="M7 18C7 15.5 9 14 12 14C15 14 17 15.5 17 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </a>
-                    
-                </div>
-            </div> 
-        </nav>
-         
-    </header>
+    
+     <?php include 'header.php'; ?>
 
     <main>
         <div class="h-150 bg-zinc-100 rounded-4xl flex flex-row items-center gap-10 justify-center p-10">
