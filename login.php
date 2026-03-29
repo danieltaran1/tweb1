@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             // Succes! Salvăm datele utilizatorului în sesiune
             $_SESSION['logged_in'] = true;
+            $_SESSION['id'] = $row['id'];
             $_SESSION['nickname'] = $row['nickname'];
             $_SESSION['balance'] = $row['balance'];
             
