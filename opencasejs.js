@@ -259,20 +259,22 @@ function showPopup(skin) {
     }
 
     fetch('save_skin.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: skin.name, img: skin.img })
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ 
+        name: skin.name, 
+        img: skin.img,  
+        rarity: skin.rarity 
+    })
     })
     .then(response => response.json())
     .then(data => {
         if (data.status === 'success') {
-            console.log(data.message); // A mers perfect!
-        } else {
-            alert("Sistemul a întâmpinat o problemă: " + data.message);
+            const balanceSpan = document.getElementById('user-balance');
+            if (balanceSpan) {
+                balanceSpan.textContent = '$' + data.new_balance;
+            }
         }
-    })
-    .catch(error => {
-        alert("Eroare critică de conexiune: Fișierul save_skin.php nu a putut fi găsit!");
     });
 }
 

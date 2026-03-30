@@ -23,7 +23,7 @@
                         <a href="./faq.php" class="hover:text-gray-700 font-semibold hover:underline">FAQ</a>
                         
                         <div class="flex flex-row items-center gap-4 border-slate-300  ml-2">
-                            <div class="bg-green-100 border border-green-300 text-green-700 font-bold rounded-full py-1 px-3 shadow-sm">
+                            <div id="user-balance" class="bg-green-100 border border-green-300 text-green-700 font-bold rounded-full py-1 px-3 shadow-sm">
                                 $<?php echo number_format($_SESSION['balance'], 2); ?>
                             </div>
                             <a href="profile.php">

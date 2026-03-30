@@ -1,13 +1,11 @@
 <?php 
 session_start(); 
 
-// Verificăm dacă utilizatorul este logat
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     header("Location: login.php");
     exit();
 }
 
-// Conectarea la baza de date
 $host = "localhost";
 $dbusername = "root";
 $dbpassword = "";
@@ -18,7 +16,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Luăm skin-urile din inventarul utilizatorului
 $user_id = $_SESSION['id'];
 $sql = "SELECT * FROM inventory WHERE user_id = '$user_id' ORDER BY id DESC";
 $result = $conn->query($sql);
@@ -124,7 +121,7 @@ $result = $conn->query($sql);
 
             <div class="max-w-7xl mx-auto px-6 pb-8">
             <p class="text-center text-slate-400 text-xs tracking-wide">
-                &copy; 2026 CS2-foryou. Not affiliated with Valve Corp. a
+                &copy; 2026 CS2-foryou. Not affiliated with Valve Corp. 
             </p>
             </div>
         </section>
@@ -132,6 +129,5 @@ $result = $conn->query($sql);
 </body>
 </html>
 <?php 
-// Închidem conexiunea la final
 $conn->close(); 
 ?>

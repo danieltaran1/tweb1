@@ -81,7 +81,7 @@
                     <div class="faq-item mt-16 bg-sky-100 rounded-4xl p-10 text-center border-2 border-sky-200 flex flex-col items-center gap-5">
                         <div class="text-3xl font-extrabold text-slate-900">Still have questions?</div>
                         <div class="text-lg text-slate-600 font-semibold">Can't find the answer you're looking for? Reach out to our team.</div>
-                        <a href="./contacts.html" class="mt-2 inline-block bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 px-10 rounded-full transition-colors text-xl">Contact Support</a>
+                        <a href="./contacts.php" class="mt-2 inline-block bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 px-10 rounded-full transition-colors text-xl">Contact Support</a>
                     </div>
 
                 </div>
@@ -111,19 +111,19 @@
                 <div class="flex flex-col ">
                     <div class="font-bold">Cases</div>
                     <div class="flex flex-col">
-                        <div><a class="hover:underline" href="opencase.html">Chrome 2</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Dangerzone</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Hydra</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Fracture</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Chrome 2</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Dangerzone</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Hydra</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Fracture</a></div>
                     </div>
                 </div>
 
                 <div class="flex flex-col">
                     <div class="font-bold">Support</div>
                     <div class="flex flex-col">
-                        <div><a class="hover:underline" href="faq.html">FAQ</a></div>
-                        <div><a class="hover:underline" href="contacts.html">Contacs</a></div>
-                        <div><a class="hover:underline" href="about.html">About</a></div>
+                        <div><a class="hover:underline" href="faq.php">FAQ</a></div>
+                        <div><a class="hover:underline" href="contacts.php">Contacs</a></div>
+                        <div><a class="hover:underline" href="about.php">About</a></div>
                     </div>
                 </div>
 

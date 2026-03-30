@@ -1,10 +1,10 @@
 <?php
-session_start(); // Pornim sesiunea pentru a ține utilizatorul logat
+session_start();
 
 $host = "localhost";
 $dbusername = "root";
 $dbpassword = "";
-$dbname = "cs2"; // Baza ta de date
+$dbname = "cs2";
 
 $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
 
@@ -16,24 +16,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_nickname = $_POST['nickname'];
     $user_password = $_POST['password'];
 
-    // Căutăm utilizatorul în baza de date după nickname
+    
     $sql = "SELECT * FROM users WHERE nickname = '$user_nickname'";
     $result = $conn->query($sql);
 
-    // Dacă găsim exact un utilizator cu acest nume
+    
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         
-        // Verificăm dacă parola introdusă se potrivește cu cea criptată din baza de date
+       
         if (password_verify($user_password, $row['password'])) {
             
-            // Succes! Salvăm datele utilizatorului în sesiune
+            
             $_SESSION['logged_in'] = true;
             $_SESSION['id'] = $row['id'];
             $_SESSION['nickname'] = $row['nickname'];
             $_SESSION['balance'] = $row['balance'];
             
-            // Îl redirecționăm pe pagina principală a simulatorului
+           
             header("Location: index.php");
             exit();
             
@@ -162,19 +162,19 @@ $conn->close();
                 <div class="flex flex-col ">
                     <div class="font-bold">Cases</div>
                     <div class="flex flex-col">
-                        <div><a class="hover:underline" href="opencase.html">Chrome 2</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Dangerzone</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Hydra</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Fracture</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Chrome 2</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Dangerzone</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Hydra</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Fracture</a></div>
                     </div>
                 </div>
 
                 <div class="flex flex-col">
                     <div class="font-bold">Support</div>
                     <div class="flex flex-col">
-                        <div><a class="hover:underline" href="faq.html">FAQ</a></div>
-                        <div><a class="hover:underline" href="contacts.html">Contacs</a></div>
-                        <div><a class="hover:underline" href="about.html">About</a></div>
+                        <div><a class="hover:underline" href="faq.php">FAQ</a></div>
+                        <div><a class="hover:underline" href="contacts.php">Contacs</a></div>
+                        <div><a class="hover:underline" href="about.php">About</a></div>
                     </div>
                 </div>
 

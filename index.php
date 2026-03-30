@@ -22,7 +22,7 @@
                     <div class="text-9xl text-white font-bold">CS2-foryou</div>
                     <div class="text-3xl text-white font-semibold">CS2 case simulator</div>
                     <div class="text-xl rounded-full p-4 bg-sky-600 hover:bg-sky-500 transition text-white cursor-pointer font-semibold hover:scale-105">
-                        <a href="opencase.html">OPEN NOW FOR FREE</a>
+                        <a href="opencase.php">OPEN NOW FOR FREE</a>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 <div class="flex flex-col justify-center items-center gap-5">
                     <div class="p-4 text-5xl font-extrabold tracking-tight bg-gradient-to-b from-yellow-300 via-yellow-500 to-yellow-700 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(253,224,71,0.8)]">Get your Dragon Lore now</div>
                     <div class="cursor-pointer px-8 py-2.5 bg-gradient-to-b from-red-500 to-red-700 text-white font-bold rounded-full shadow-[0_0_20px_rgba(239,68,68,0.6)] border-2 border-red-400/30 hover:shadow-[0_0_30px_rgba(239,68,68,0.8)] hover:scale-105 transition-all duration-30">
-                        <a href="opencase.html">Open for 0$</a></div>
+                        <a href="opencase.php">Open for 0$</a></div>
                 </div>
                 <div>
                     <img class="h-100" src="img/dragonlore1.png" alt="">
@@ -88,105 +88,105 @@
                         <div id="cases-track" class="flex flex-row gap-3 p-5">
                         
                         <div class="p-10 border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400 cursor-pointer ">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/Chroma2.png" alt="" class="w-full h-full object-contain">
                                 <div class="flex justify-center font-bold">Chroma 2</div>
                             </a>
                             
                         </div>
                         <div class=" cursor-pointer p-10 border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400 ">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/Dangerzone.png" alt="" class="w-full h-full object-contain">
                                 <div class="flex justify-center font-bold">Dangerzone</div>
                             </a>
                             
                         </div>
                         <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/dreams2.png" alt="" class="w-full h-full object-contain"">
                                 <div class="flex justify-center font-bold">Dreams & Nightmares</div>
                             </a>
                             
                         </div>
                         <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/Fracture.png" alt="" class="w-full h-full object-contain">
                                 <div class="flex justify-center font-bold">Fracture</div>
                             </a>
                             
                         </div>
                         <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/Hydra.png" alt="" class="w-full h-full object-contain">
                                 <div class="flex justify-center font-bold">Hydra</div>
                             </a>
                             
                         </div>
                         <div class="p-10 border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400 cursor-pointer">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/Chroma2.png" alt="" class="w-full h-full object-contain">
                                 <div class="flex justify-center font-bold">Chroma 2</div>
                             </a>
                             
                         </div>
                         <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/Dangerzone.png" alt="" class="w-full h-full object-contain">
                                 <div class="flex justify-center font-bold">Dangerzone</div>
                             </a>
                             
                         </div>
                         <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/dreams2.png" alt="" class="w-full h-full object-contain"">
                                 <div class="flex justify-center font-bold">Dreams & Nightmares</div>
                             </a>
                             
                         </div>
                         <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/Fracture.png" alt="" class="w-full h-full object-contain">
                                 <div class="flex justify-center font-bold">Fracture</div>
                             </a>
                             
                         </div>
                         <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/Hydra.png" alt="" class="w-full h-full object-contain">
                                 <div class="flex justify-center font-bold">Hydra</div>
                             </a>
                             
                         </div>
                         <div class="p-10 border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400 cursor-pointer">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/Chroma2.png" alt="" class="w-full h-full object-contain">
                                 <div class="flex justify-center font-bold">Chroma 2</div>
                             </a>
                             
                         </div>
                         <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/Dangerzone.png" alt="" class="w-full h-full object-contain">
                                 <div class="flex justify-center font-bold">Dangerzone</div>
                             </a>
                             
                         </div>
                         <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/dreams2.png" alt="" class="w-full h-full object-contain"">
                                 <div class="flex justify-center font-bold">Dreams & Nightmares</div>
                             </a>
                             
                         </div>
                         <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/Fracture.png" alt="" class="w-full h-full object-contain">
                                 <div class="flex justify-center font-bold">Fracture</div>
                             </a>
                             
                         </div>
                         <div class="p-10 cursor-pointer border-1 rounded-4xl bg-gray-200 hover:bg-gray-300 border-slate-400">
-                            <a href="opencase.html">
+                            <a href="opencase.php">
                                 <img src="img/Hydra.png" alt="" class="w-full h-full object-contain">
                                 <div class="flex justify-center font-bold">Hydra</div>
                             </a>
@@ -221,19 +221,19 @@
                 <div class="flex flex-col ">
                     <div class="font-bold">Cases</div>
                     <div class="flex flex-col">
-                        <div><a class="hover:underline" href="opencase.html">Chrome 2</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Dangerzone</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Hydra</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Fracture</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Chrome 2</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Dangerzone</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Hydra</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Fracture</a></div>
                     </div>
                 </div>
 
                 <div class="flex flex-col">
                     <div class="font-bold">Support</div>
                     <div class="flex flex-col">
-                        <div><a class="hover:underline" href="faq.html">FAQ</a></div>
-                        <div><a class="hover:underline" href="contacts.html">Contacs</a></div>
-                        <div><a class="hover:underline" href="about.html">About</a></div>
+                        <div><a class="hover:underline" href="faq.php">FAQ</a></div>
+                        <div><a class="hover:underline" href="contacts.php">Contacs</a></div>
+                        <div><a class="hover:underline" href="about.php">About</a></div>
                     </div>
                 </div>
 
@@ -263,7 +263,7 @@
 
             <div class="max-w-7xl mx-auto px-6 pb-8">
             <p class="text-center text-slate-400 text-xs tracking-wide">
-                &copy; 2026 CS2-foryou. Not affiliated with Valve Corp. a
+                &copy; 2026 CS2-foryou. Not affiliated with Valve Corp. 
             </p>
             </div>
         </section>

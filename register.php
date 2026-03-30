@@ -17,14 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_nickname = $_POST['nickname'];
     $user_password = $_POST['password'];
 
-    // 1. PASUL NOU: Verificăm dacă email-ul sau nickname-ul există deja
     $check_sql = "SELECT * FROM users WHERE email = '$user_email' OR nickname = '$user_nickname'";
     $check_result = $conn->query($check_sql);
 
-    // Dacă num_rows este mai mare ca 0, înseamnă că a găsit o potrivire
     if ($check_result->num_rows > 0) {
         
-        // Preluăm rândul găsit pentru a vedea exact ce anume s-a potrivit
         $row = $check_result->fetch_assoc();
         
         if ($row['email'] === $user_email) {
@@ -34,12 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
     } else {
-        // 2. Dacă nu a găsit niciun duplicat, putem continua cu înregistrarea
         
-        // Criptăm parola
+        
+       
         $hashed_password = password_hash($user_password, PASSWORD_DEFAULT);
 
-        // Salvăm în baza de date
+       
         $sql = "INSERT INTO users (email, nickname, password) VALUES ('$user_email', '$user_nickname', '$hashed_password')";
 
         if ($conn->query($sql) === TRUE) {
@@ -173,19 +170,19 @@ $conn->close();
                 <div class="flex flex-col ">
                     <div class="font-bold">Cases</div>
                     <div class="flex flex-col">
-                        <div><a class="hover:underline" href="opencase.html">Chrome 2</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Dangerzone</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Hydra</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Fracture</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Chrome 2</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Dangerzone</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Hydra</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Fracture</a></div>
                     </div>
                 </div>
 
                 <div class="flex flex-col">
                     <div class="font-bold">Support</div>
                     <div class="flex flex-col">
-                        <div><a class="hover:underline" href="faq.html">FAQ</a></div>
-                        <div><a class="hover:underline" href="contacts.html">Contacs</a></div>
-                        <div><a class="hover:underline" href="about.html">About</a></div>
+                        <div><a class="hover:underline" href="faq.php">FAQ</a></div>
+                        <div><a class="hover:underline" href="contacts.php">Contacs</a></div>
+                        <div><a class="hover:underline" href="about.php">About</a></div>
                     </div>
                 </div>
 

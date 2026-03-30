@@ -76,19 +76,19 @@
                 <div class="flex flex-col ">
                     <div class="font-bold">Cases</div>
                     <div class="flex flex-col">
-                        <div><a class="hover:underline" href="opencase.html">Chrome 2</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Dangerzone</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Hydra</a></div>
-                        <div><a class="hover:underline" href="opencase.html">Fracture</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Chrome 2</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Dangerzone</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Hydra</a></div>
+                        <div><a class="hover:underline" href="opencase.php">Fracture</a></div>
                     </div>
                 </div>
 
                 <div class="flex flex-col">
                     <div class="font-bold">Support</div>
                     <div class="flex flex-col">
-                        <div><a class="hover:underline" href="faq.html">FAQ</a></div>
-                        <div><a class="hover:underline" href="contacts.html">Contacs</a></div>
-                        <div><a class="hover:underline" href="about.html">About</a></div>
+                        <div><a class="hover:underline" href="faq.php">FAQ</a></div>
+                        <div><a class="hover:underline" href="contacts.php">Contacs</a></div>
+                        <div><a class="hover:underline" href="about.php">About</a></div>
                     </div>
                 </div>
 
