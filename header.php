@@ -1,5 +1,6 @@
 <header>
         <nav>
+            
             <div class="p-4 flex flex-row gap-10 justify-between text-xl ">
                 <a href="./index.php" class="justify-left font-extrabold text-4xl flex" >
                     <div class="flex justify-center items-center px-2 ">

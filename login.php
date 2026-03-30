@@ -16,32 +16,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_nickname = $_POST['nickname'];
     $user_password = $_POST['password'];
 
-    
     $sql = "SELECT * FROM users WHERE nickname = '$user_nickname'";
     $result = $conn->query($sql);
 
-    
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         
-       
         if (password_verify($user_password, $row['password'])) {
-            
-            
             $_SESSION['logged_in'] = true;
             $_SESSION['id'] = $row['id'];
             $_SESSION['nickname'] = $row['nickname'];
             $_SESSION['balance'] = $row['balance'];
             
-           
             header("Location: index.php");
             exit();
-            
         } else {
-            echo "<script>alert('Parola este incorectă!');</script>";
+            header("Location: login.php?error=wrong_pass");
+            exit();
         }
     } else {
-        echo "<script>alert('Acest nickname nu există! Te rugăm să te înregistrezi.');</script>";
+        header("Location: login.php?error=user_not_found");
+        exit();
     }
 }
 $conn->close();
@@ -54,26 +49,25 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account</title>
     <link href="./src/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="px-30">
+<body class="px-30 relative">
     
-    <?php include 'header.php'; ?>
+    <div id="toast-container" class="fixed top-5 right-5 z-[100]"></div>
 
+    <?php include 'header.php'; ?>
 
     <main>
         <div class="flex justify-center p-10">
             <div class="relative flex items-center justify-center w-full max-w-sm min-h-[520px] bg-sky-100 rounded-[2.5rem] shadow-sm border border-sky-200 p-6 overflow-hidden">
-                
                 <div class="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
                 <div class="relative w-full max-w-[300px] bg-white rounded-3xl shadow-xl p-6 sm:p-8 flex flex-col z-15">
-                    
                     <div class="font-bold text-2xl text-[#1e3a8a] flex justify-center pb-6">
                         Login
                     </div>
 
                     <form action="login.php" method="POST" class="flex flex-col space-y-4 w-full">
-                        
                         <div class="flex flex-col">
                             <label for="nickname" class="text-sm font-semibold text-slate-600 mb-1 ml-1">Nickname</label>
                             <input id="nickname" type="text" name="nickname" placeholder="Enter Nickname" required class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 focus:border-[#1e3a8a] focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] transition-colors shadow-sm" />
@@ -82,9 +76,11 @@ $conn->close();
                         <div class="flex flex-col">
                             <label for="password" class="text-sm font-semibold text-slate-600 mb-1 ml-1">Password</label>
                             <div class="relative">
-                                <input id="password" type="password" name="password" placeholder="Enter Password" required class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 pr-12 text-sm text-slate-800 placeholder:text-slate-400 focus:border-[#1e3a8a] focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] transition-colors shadow-sm" />
+                                <input id="password" type="password" name="password" placeholder="Enter Password" required 
+                                    class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 pr-12 text-sm text-slate-800 placeholder:text-slate-400 focus:border-[#1e3a8a] focus:outline-none focus:ring-1 focus:ring-[#1e3a8a] transition-colors shadow-sm" />
+                                
                                 <span id="toggle-password"
-                                    class="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-slate-400 text-xs select-none hover:text-slate-600">
+                                    class="absolute right-3 top-0 h-full flex items-center cursor-pointer text-slate-400 text-xs select-none hover:text-slate-600">
                                     Show
                                 </span>
                             </div>
@@ -104,111 +100,11 @@ $conn->close();
                 </div>
             </div>
         </div>
-
-
-        <div class="py-10 hidden">
-            <div class="flex flex-row justify-between">
-                <div class="font-bold p-4 text-4xl">My Skins:</div>
-                <div class="flex flex-row gap-4 items-center px-10">
-                    <div>Knifes</div>
-                    <div>Gloves</div>
-                    <div>Pistols</div>
-                    <div>Rifles</div>
-                    <div>SMGs</div>
-                    <div>Heavy</div> 
-                </div>
-            </div>
-            <div class=" font-bold p-4 text-4xl  rounded-4xl ">
-                <div class="grid grid-cols-6 gap-10 flex justify-center items-center p-4">
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                    <div class="flex justify-center p-4 py-7 bg-white rounded-3xl outline-2 outline-gray-300">.</div>
-                </div>
-            </div>
-        </div>
     </main>
 
-    <footer>
-        <section>
-            <div class="">
-                <hr class="border-t border-slate-500 my-8">
-            </div>
-            <div class="flex flex-row justify-between p-10 gap-20">
-                <div class="flex flex-col ">
-                    <div class="font-extrabold text-3xl flex flex-row">
-                        <div class="flex justify-center items-center px-2 ">
-                            <img class="w-10 rounded-md" src="img/cslogo.png" alt="">
-                        </div>
-                        <div><a href="index.php">CS2-foryou</a></div>
-                    </div>
-                    <div>The ultimate free CS2 case simulator</div>
-                </div>
+    <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-2"></div>
 
-                <div class="flex flex-col ">
-                    <div class="font-bold">Cases</div>
-                    <div class="flex flex-col">
-                        <div><a class="hover:underline" href="opencase.php">Chrome 2</a></div>
-                        <div><a class="hover:underline" href="opencase.php">Dangerzone</a></div>
-                        <div><a class="hover:underline" href="opencase.php">Hydra</a></div>
-                        <div><a class="hover:underline" href="opencase.php">Fracture</a></div>
-                    </div>
-                </div>
-
-                <div class="flex flex-col">
-                    <div class="font-bold">Support</div>
-                    <div class="flex flex-col">
-                        <div><a class="hover:underline" href="faq.php">FAQ</a></div>
-                        <div><a class="hover:underline" href="contacts.php">Contacs</a></div>
-                        <div><a class="hover:underline" href="about.php">About</a></div>
-                    </div>
-                </div>
-
-                <div class="flex flex-raw gap-5">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="hover:cursor-pointer hover:scale-125">
-                            <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="hover:cursor-pointer hover:scale-125">
-                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037 19.736 19.736 0 0 0-4.885 1.515.069.069 0 0 0-.032.027C.533 9.048-.32 13.572.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="hover:cursor-pointer hover:scale-125">
-                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.06-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.81.33-.85.51-1.44 1.43-1.58 2.41-.16 1.02.13 2.12.8 2.93.59.76 1.48 1.25 2.45 1.35.91.1 1.86-.14 2.59-.7.76-.53 1.25-1.38 1.34-2.31.11-2.48.03-4.96.04-7.44.02-3.34.01-6.68.01-10.02z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="hover:cursor-pointer hover:scale-125">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-7xl mx-auto px-6 pb-8">
-            <p class="text-center text-slate-400 text-xs tracking-wide">
-                &copy; 2026 CS2-foryou. Not affiliated with Valve Corp.
-            </p>
-            </div>
-        </section>
-    </footer>
-<script src="login.js"></script>
+    <script src="notifications.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
