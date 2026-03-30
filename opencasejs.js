@@ -255,7 +255,7 @@ function showPopup(skin) {
     document.getElementById('popup-overlay').classList.remove('hidden');
 
     if (skin.rarity === 'covert' || skin.rarity === 'gold') {
-        spawnConfetti(r.color);
+        //spawnConfetti(r.color);
     }
 
     fetch('save_skin.php', {
